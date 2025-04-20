@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>console-color</title>
+    <script src="console-color.js"></script>
+</head>
+
+<body>
+    <script>
+        // 普通日志
+        ConsoleColor.log('这是一个普通日志！');
+        ConsoleColor.log('这是一个默认样式的普通日志！', true);
+        ConsoleColor.log('这是一个反转的默认样式的普通日志！', false);
+        ConsoleColor.log('这是一个自定义样式的普通日志！', true, '	#8B864E', '	#90EE90');
+
+        // 信息日志
+        ConsoleColor.info('页面加载完成！');
+
+        // 警告日志
+        ConsoleColor.warn('请注意潜在问题！');
+
+        // 错误日志
+        ConsoleColor.error('发生错误，请检查！');
+
+        // 成功日志 
+        ConsoleColor.success('操作成功！');
+
+        // 调试日志
+        ConsoleColor.debug('这是一个调试信息！');
+
+        // 断言
+        ConsoleColor.assert(1 === 2, '断言失败：1 不等于 2');
+
+        // 创建分组
+        ConsoleColor.group('分组');
+        // 普通日志
+        ConsoleColor.log('这是分组中的内容');
+        // 结束分组           
+        ConsoleColor.groupEnd();
+
+        // 表格
+        ConsoleColor.table([
+            { name: 'Alice', age: 25 },
+            { name: 'Bob', age: 30 },
+        ]);
+
+        // 堆栈跟踪
+        ConsoleColor.trace('堆栈跟踪');
+
+        // 分隔线
+        ConsoleColor.divider();
+
+        // 模拟一个成功的 GET 请求
+        ConsoleColor.network('https://api.example.com/data', 'GET', 200, 150);
+
+        // 模拟一个失败的 POST 请求
+        ConsoleColor.network('https://api.example.com/submit', 'POST', 500, 300);
+
+        // 自定义颜色的网络请求日志
+        ConsoleColor.network(
+            'https://api.example.com/custom',
+            'PUT',
+            404,
+            200,
+            '#ffffff',
+            '#ff00ff'
+        );
+    </script>
+</body>
+
+</html>
